@@ -19,23 +19,23 @@ module.exports={
             template:'index.html', // 为啥这里只写个index.html就默认的是根目录下的呢？这里有个运行环境上下文的概念，上下文的默认值就是运行这个脚本的目录，我们一般会在根目录运行脚本，所以这个上下文就是根目录
             title:'this is a.html',
             inject:false,
-            chunks: ['main', 'a'],
+            excludeChunks: ['b', 'c'], // 注入除了b,c之外的其他chunks
             inject: 'body', // 将script标签注入到body中
         }),
         new htmlWebpackPlugin({
-            filename:'b.html', // 根据template模板打包出来的index.html
-            template:'index.html', // 为啥这里只写个index.html就默认的是根目录下的呢？这里有个运行环境上下文的概念，上下文的默认值就是运行这个脚本的目录，我们一般会在根目录运行脚本，所以这个上下文就是根目录
+            filename:'b.html',
+            template:'index.html',
             title:'this is b.html',
             inject:false,
-            chunks: ['b'],
+            excludeChunks: ['a', 'c'],
             inject: 'body',
         }),
         new htmlWebpackPlugin({
-            filename:'c.html', // 根据template模板打包出来的index.html
-            template:'index.html', // 为啥这里只写个index.html就默认的是根目录下的呢？这里有个运行环境上下文的概念，上下文的默认值就是运行这个脚本的目录，我们一般会在根目录运行脚本，所以这个上下文就是根目录
+            filename:'c.html',
+            template:'index.html',
             title:'this is c.html',
             inject:false,
-            chunks: ['c'],
+            excludeChunks: ['a', 'b'],
             inject: 'body',
         })
     ]
