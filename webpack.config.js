@@ -20,7 +20,9 @@ module.exports={
             title:'this is a.html',
             inject:false,
             excludeChunks: ['b', 'c'], //  注入除了b,c之外的其他chunks
-            inject: 'body', // 将script标签注入到body中
+            minify:{ // 压缩
+                removeComments: true // 去掉注释
+            }
         }),
         new htmlWebpackPlugin({
             filename:'b.html',
@@ -28,7 +30,9 @@ module.exports={
             title:'this is b.html',
             inject:false,
             excludeChunks: ['a', 'c'],
-            inject: 'body',
+            minify:{ // 压缩
+                removeComments: true
+            }
         }),
         new htmlWebpackPlugin({
             filename:'c.html',
@@ -36,7 +40,9 @@ module.exports={
             title:'this is c.html',
             inject:false,
             excludeChunks: ['a', 'b'],
-            inject: 'body',
+            minify:{ // 压缩
+                removeComments: true
+            }
         })
     ]
 }
