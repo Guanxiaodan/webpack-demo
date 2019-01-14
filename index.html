@@ -3,63 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title><%= htmlWebpackPlugin.options.title %></title>
-        <script type="text/javascript">
-        // 这里是将编译后的js文件内容直接放到html中，而不是script标签通过src引入路径来注入js内容。这样直接将js内容写到html中可以减少请求次数
-        // htmlWebpackPlugin.files.chunks.main.entry：打包后的main文件的路径，会带着publicpath。
-        // compilation.assets是属于webpack的源码，可以读取webpack打包后的chunks
-        // 但是compilation.assets的内容并没有带上punllicpath（也就是说如果带了publicpath，它会找不到。）所以我们要将public给切掉
-        // source()就可以读取到compilation.assets找到的chunks（webpack打包完之后的js文件）的内容啦
-            <%= compilation.assets[htmlWebpackPlugin.files.chunks.main.entry.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
-        </script>
     </head>
     <body>
-            <!-- 下面的代码的意思是不把main打包后的文件再引入进来了 -->
-            <% console.log('什么鬼鬼',htmlWebpackPlugin.files.chunks) %>
-            <!-- 打印结果（一共打印三份，下面这个是a.html对应的打印，还有b.html c.html我没粘出来，换个名就行）：
-            { main:
-                { size: 49,
-                  entry: 'http://cdn.com/js/main-54a4b11acc8921605fa4.js',
-                  hash: '54a4b11acc8921605fa4',
-                  css: [] },
-               a:
-                { size: 45,
-                  entry: 'http://cdn.com/js/a-5134b86ba7375d595584.js',
-                  hash: '5134b86ba7375d595584',
-                  css: [] } } -->
-            
-                  <% console.log('看看看htmlWebpackPlugin是什么',htmlWebpackPlugin) %>
-        <!-- { 
-                files:
-                    { publicPath: 'http://cdn.com/',
-                      chunks: { main: [Object], a: [Object] },
-                      js:
-                       [ 'http://cdn.com/js/main-54a4b11acc8921605fa4.js',
-                         'http://cdn.com/js/a-5134b86ba7375d595584.js' ],
-                      css: [],
-                      manifest: undefined },
-                options:
-                    { template: '/Users/guanxiaodan/WebstormProjects/gxd/myTest/webpack-demo/node_modules/html-webpack-plugin/lib/loader.js!/Users/guanxiaodan/WebstormProjects/gxd/myTest/webpack-demo/index.html',
-                      templateParameters: [Function: templateParametersGenerator],
-                      filename: 'a.html',
-                      hash: false,
-                      inject: false,
-                      compile: true,
-                      favicon: false,
-                      minify: false,
-                      cache: true,
-                      showErrors: true,
-                      chunks: 'all',
-                      excludeChunks: [ 'b', 'c' ],
-                      chunksSortMode: 'auto',
-                      meta: {},
-                      title: 'this is a.html',
-                      xhtml: false } 
-            } -->
-
-            <% for(var k in htmlWebpackPlugin.files.chunks) { %>
-                <% if(k != 'main'){ %>
-                    <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks[k].entry %>"></script>
-                <% } %>
-            <% } %>
     </body>
 </html> 
