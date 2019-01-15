@@ -3,7 +3,7 @@ const path = require('path');
 module.exports={
     entry:'./src/app.js',
     output:{
-        path:'./dist',
+        path:path.resolve(__dirname, './dist'),
         filename:'js/[name].bundle.js',
     },
     mode:'development',
@@ -13,5 +13,15 @@ module.exports={
             template:'index.html',
             inject:'body'
         }),
-    ]
+    ],
+    module:{
+        rules:[
+            {
+                test:/\.js$/,
+                use: 'babel-loader',
+                exclude: __dirname + 'node_modules',
+                include: __dirname + 'src',
+            }
+        ]
+    }
 }
