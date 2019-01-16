@@ -216,9 +216,9 @@ eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/
   !*** ./src/components/layer/layer.tpl ***!
   \****************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = function (obj) {\nobj || (obj = {});\nvar __t, __p = '', __j = Array.prototype.join;\nfunction print() { __p += __j.call(arguments, '') }\nwith (obj) {\n__p += '<div class=\"layer\">\\n    <div> this is a layer ' +\n((__t = ( name )) == null ? '' : __t) +\n' 晓丹</div>\\n    ';\n for(var i = 0; i < arr.length; i++) { ;\n__p += '\\n        ' +\n((__t = ( arr[i] )) == null ? '' : __t) +\n'\\n    ';\n } ;\n__p += '\\n</div>';\n\n}\nreturn __p\n}\n\n//# sourceURL=webpack:///./src/components/layer/layer.tpl?");
+eval("module.exports = function (obj) {\nobj || (obj = {});\nvar __t, __p = '', __j = Array.prototype.join;\nfunction print() { __p += __j.call(arguments, '') }\nwith (obj) {\n__p += '<div class=\"layer\">\\n     下面这样写是得不到图片的\\n     <img src=\"../../assets/us.jpg\"/> \\n     但是这样写是可以得到图片的\\n     <img src=\"' +\n((__t = (__webpack_require__(/*! ../../assets/us.jpg */ \"./src/assets/us.jpg\"))) == null ? '' : __t) +\n'\"/> \\n    <div> this is a layer ' +\n((__t = ( name )) == null ? '' : __t) +\n' 晓丹</div>\\n    ';\n for(var i = 0; i < arr.length; i++) { ;\n__p += '\\n        ' +\n((__t = ( arr[i] )) == null ? '' : __t) +\n'\\n    ';\n } ;\n__p += '\\n</div>';\n\n}\nreturn __p\n}\n\n//# sourceURL=webpack:///./src/components/layer/layer.tpl?");
 
 /***/ }),
 
