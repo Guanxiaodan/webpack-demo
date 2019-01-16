@@ -70,7 +70,24 @@ module.exports={
             },
             {
                 test:/\.(png|jpg|gif|svg)$/i,
-                use: 'file-loader',
+                use: [
+                    {
+                        loader: 'url-loader', // 可以设置文件或图片大小，如果大于limit，则使用路径，如果小于limit，则转换成base64
+                        options:{
+                            limit: 10000,
+                            name: 'assets/[name]-[hash:5].[ext]'
+                        }
+                    },
+                    // {
+                    //     loader: 'image-webpack-loader', // 图片压缩
+                    //     options:{
+                    //         limit: 200000,
+                    //         name: 'assets/[name]-[hash:5].[ext]'
+                    //     }
+                    // },
+                    'image-webpack-loader'
+                ],
+
             },
         ]
     }
