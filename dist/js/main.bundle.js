@@ -86,14 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js!./src/components/layer/layer.less":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??postcss!./node_modules/less-loader/dist/cjs.js!./src/components/layer/layer.less ***!
-  \***************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js!./src/components/layer/layer.less":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src??postcss!./node_modules/less-loader/dist/cjs.js!./src/components/layer/layer.less ***!
+  \*****************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".layer {\\n  widows: 100px;\\n  height: 100px;\\n  background: yellowgreen;\\n}\\n.layer div {\\n  width: 50px;\\n  height: 50px;\\n  background: yellow;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/layer/layer.less?./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??postcss!./node_modules/less-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".flext {\\n  display: -webkit-box;\\n  display: -ms-flexbox;\\n  display: flex;\\n  -webkit-box-pack: center;\\n      -ms-flex-pack: center;\\n          justify-content: center;\\n  color: skyblue;\\n}\\n.layer {\\n  widows: 100px;\\n  height: 100px;\\n  background: yellowgreen;\\n}\\n.layer div {\\n  width: 50px;\\n  height: 50px;\\n  background: yellow;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/layer/layer.less?./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src??postcss!./node_modules/less-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -161,7 +161,18 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_layer_layer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/layer/layer */ \"./src/components/layer/layer.js\");\n/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/common.css */ \"./src/css/common.css\");\n/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_common_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\nconst App = function () {\n    const NUM = 1;\n    alert(NUM)\n    console.log(_components_layer_layer__WEBPACK_IMPORTED_MODULE_0__[\"default\"])\n}\n\nnew App()\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_layer_layer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/layer/layer.js */ \"./src/components/layer/layer.js\");\n/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/common.css */ \"./src/css/common.css\");\n/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_common_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\nconst App = function () {\n    const dom = document.getElementById('app')\n    var layer = new _components_layer_layer_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]()\n    dom.innerHTML = layer.tpl\n}\n\nnew App()\n\n//# sourceURL=webpack:///./src/app.js?");
+
+/***/ }),
+
+/***/ "./src/components/layer/layer.html":
+/*!*****************************************!*\
+  !*** ./src/components/layer/layer.html ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<div class=\\\"layer\\\">\\n    <div> this is a layer </div>\\n</div>\";\n\n//# sourceURL=webpack:///./src/components/layer/layer.html?");
 
 /***/ }),
 
@@ -173,7 +184,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _layer_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./layer.less */ \"./src/components/layer/layer.less\");\n/* harmony import */ var _layer_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_layer_less__WEBPACK_IMPORTED_MODULE_0__);\n// import tpl from './layer.html'\n\nfunction layer () {\n    return {\n        name: 'layer',\n        // tpl: tpl\n    }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (layer);\n\n//# sourceURL=webpack:///./src/components/layer/layer.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _layer_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./layer.html */ \"./src/components/layer/layer.html\");\n/* harmony import */ var _layer_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_layer_html__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _layer_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./layer.less */ \"./src/components/layer/layer.less\");\n/* harmony import */ var _layer_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_layer_less__WEBPACK_IMPORTED_MODULE_1__);\n\n\nfunction Layer () {\n    return {\n        name: 'layer',\n        tpl: _layer_html__WEBPACK_IMPORTED_MODULE_0___default.a\n    }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Layer);\n\n//# sourceURL=webpack:///./src/components/layer/layer.js?");
 
 /***/ }),
 
@@ -184,7 +195,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lay
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-1!../../../node_modules/postcss-loader/src??postcss!../../../node_modules/less-loader/dist/cjs.js!./layer.less */ \"./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js!./src/components/layer/layer.less\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/components/layer/layer.less?");
+eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/postcss-loader/src??postcss!../../../node_modules/less-loader/dist/cjs.js!./layer.less */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js!./src/components/layer/layer.less\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/components/layer/layer.less?");
 
 /***/ }),
 
