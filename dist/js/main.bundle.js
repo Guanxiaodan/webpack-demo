@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".flext {\\n  display: -webkit-box;\\n  display: -ms-flexbox;\\n  display: flex;\\n  -webkit-box-pack: center;\\n      -ms-flex-pack: center;\\n          justify-content: center;\\n  color: skyblue;\\n}\\n.layer {\\n  widows: 700px;\\n  height: 700px;\\n  background: yellowgreen;\\n}\\n.layer div {\\n  width: 500px;\\n  height: 500px;\\n  background: yellow;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/layer/layer.less?./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src??postcss!./node_modules/less-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Imports\nvar urlEscape = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/url-escape.js */ \"./node_modules/css-loader/dist/runtime/url-escape.js\");\nvar ___CSS_LOADER_URL___0___ = urlEscape(__webpack_require__(/*! ../../assets/us.jpg */ \"./src/assets/us.jpg\"));\n\n// Module\nexports.push([module.i, \".flext {\\n  display: -webkit-box;\\n  display: -ms-flexbox;\\n  display: flex;\\n  -webkit-box-pack: center;\\n      -ms-flex-pack: center;\\n          justify-content: center;\\n  color: skyblue;\\n}\\n.layer {\\n  widows: 700px;\\n  height: 700px;\\n  background: yellowgreen;\\n}\\n.layer div {\\n  width: 500px;\\n  height: 500px;\\n  background: url(\" + ___CSS_LOADER_URL___0___ + \");\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/layer/layer.less?./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src??postcss!./node_modules/less-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -131,6 +131,18 @@ eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/runtime/url-escape.js":
+/*!************************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/url-escape.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nmodule.exports = function escape(url, needQuotes) {\n  if (typeof url !== 'string') {\n    return url;\n  } // If url is already wrapped in quotes, remove them\n\n\n  if (/^['\"].*['\"]$/.test(url)) {\n    url = url.slice(1, -1);\n  } // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n\n\n  if (/[\"'() \\t\\n]/.test(url) || needQuotes) {\n    return '\"' + url.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n') + '\"';\n  }\n\n  return url;\n};\n\n//# sourceURL=webpack:///./node_modules/css-loader/dist/runtime/url-escape.js?");
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -162,6 +174,17 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_layer_layer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/layer/layer.js */ \"./src/components/layer/layer.js\");\n/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/common.css */ \"./src/css/common.css\");\n/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_common_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\nconst App = function () {\n    const dom = document.getElementById('app')\n    var layer = new _components_layer_layer_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]()\n    dom.innerHTML = layer.tpl({\n        name: '关',\n        arr: ['关羽','刘备','张飞']\n    });\n}\n\nnew App()\n\n//# sourceURL=webpack:///./src/app.js?");
+
+/***/ }),
+
+/***/ "./src/assets/us.jpg":
+/*!***************************!*\
+  !*** ./src/assets/us.jpg ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"688fb685b6e86ba3b7fb80654e6e3d91.jpg\";\n\n//# sourceURL=webpack:///./src/assets/us.jpg?");
 
 /***/ }),
 
