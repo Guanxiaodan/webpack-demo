@@ -24,7 +24,19 @@ module.exports={
             },
             {
                 test:/\.css$/,
-                use: ['style-loader','css-loader'],
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options:{
+                            ident: 'postcss',
+                            plugins:[
+                                require('autoprefixer')({browsers:['last 5 versions']})  // autoprefixer: 给浏览器加前缀
+                            ]
+                        }
+                    }
+                ],
             }
         ]
     }
