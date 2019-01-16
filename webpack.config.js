@@ -26,9 +26,14 @@ module.exports={
                 test:/\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader',
                     {
-                        loader: 'postcss-loader',
+                        loader:'css-loader',
+                        options:{
+                            importLoaders: 1, // 这个数组是几根据cssloader后面的loader的数量保持一致就行，比如现在css-loader后面只有一个postcss-loader,所以就写1
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader', // 功能非常强大，有很多插件可以使用
                         options:{
                             ident: 'postcss',
                             plugins:[

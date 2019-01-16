@@ -1,3 +1,4 @@
+@import './flex.css'; /*像这种import进来的css文件，webpack会在页面上重新为它渲染一个style标签在生成的html文件中。但是并不会被postcss-loader所解析.如何解决呢：需要在webpack.config.js的css-loader中传个参数*/
 html,body{
     padding: 0;
     margin: 0;
@@ -8,7 +9,3 @@ ul，li{
     margin:0;
     list-style:none;
 } 
-.flex-div{
-    display: flex;
-    
-}
